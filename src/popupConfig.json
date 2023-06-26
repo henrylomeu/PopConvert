@@ -1,97 +1,96 @@
 [
-    {
-      "title": "Pop-up 1",
-      "subtitle": "Subtítulo 1",
-      "image": "https://th.bing.com/th/id/OIG.Of64MkmCFNs0a6.9.70Z?pid=ImgGn",
-      "formFields": [
-        {
-          "label": "Email:",
-          "type": "email",
-          "id": "email",
-          "model": "email",
-          "required": true
-        },
-        {
-          "label": "Nome:",
-          "type": "text",
-          "id": "name",
-          "model": "name",
-          "required": true
-        },
-        {
-          "label": "Número de Celular:",
-          "type": "tel",
-          "id": "phone",
-          "model": "phone",
-          "required": true
-        },
-        {
-          "label": "Gênero:",
-          "type": "select",
-          "id": "gender",
-          "model": "gender",
-          "options": [
-            { "label": "Selecione", "value": "" },
-            { "label": "Masculino", "value": "masculino" },
-            { "label": "Feminino", "value": "feminino" }
-          ],
-          "required": true
-        },
-        {
-          "label": "Concordo com a coleta de dados:",
-          "type": "checkbox",
-          "id": "consent",
-          "model": "consent",
-          "required": true
-        }
-      ]
-    },
-    {
-      "title": "Pop-up 2",
-      "subtitle": "Subtítulo 2",
-      "video": "https://www.bing.com/videos/riverview/relatedvideo?&q=video+de+gatos&&mid=4011673955489E237B844011673955489E237B84&&FORM=VRDGAR",
-      "formFields": [
-        {
-          "label": "Email:",
-          "type": "email",
-          "id": "email",
-          "model": "email",
-          "required": true
-        },
-        {
-          "label": "Nome:",
-          "type": "text",
-          "id": "name",
-          "model": "name",
-          "required": true
-        },
-        {
-          "label": "Número de Celular:",
-          "type": "tel",
-          "id": "phone",
-          "model": "phone",
-          "required": true
-        },
-        {
-          "label": "Gênero:",
-          "type": "select",
-          "id": "gender",
-          "model": "gender",
-          "options": [
-            { "label": "Selecione", "value": "" },
-            { "label": "Masculino", "value": "masculino" },
-            { "label": "Feminino", "value": "feminino" }
-          ],
-          "required": true
-        },
-        {
-          "label": "Concordo com a coleta de dados:",
-          "type": "checkbox",
-          "id": "consent",
-          "model": "consent",
-          "required": true
-        }
-      ]
-    }
-  ]
-  
+  {
+    "title": "Pop-up 1",
+    "subtitle": "Subtítulo 1",
+    "image": "https://th.bing.com/th/id/OIG.Of64MkmCFNs0a6.9.70Z?pid=ImgGn",
+    "formFields": [
+      {
+        "label": "Email:",
+        "type": "email",
+        "id": "email",
+        "model": "email",
+        "required": true
+      },
+      {
+        "label": "Nome:",
+        "type": "text",
+        "id": "name",
+        "model": "name",
+        "required": true
+      },
+      {
+        "label": "Número de Celular:",
+        "type": "tel",
+        "id": "phone",
+        "model": "phone",
+        "required": true
+      },
+      {
+        "label": "Gênero:",
+        "type": "select",
+        "id": "gender",
+        "model": "gender",
+        "options": [
+          { "label": "Selecione", "value": "" },
+          { "label": "Masculino", "value": "masculino" },
+          { "label": "Feminino", "value": "feminino" }
+        ],
+        "required": true
+      },
+      {
+        "label": "Concordo com a coleta de dados:",
+        "type": "checkbox",
+        "id": "consent",
+        "model": "consent",
+        "required": true
+      }
+    ]
+  },
+  {
+    "title": "Pop-up 2",
+    "subtitle": "Subtítulo 2",
+    "videoUrl": "https://drive.google.com/uc?export=download&id=1QSBPVUzhAWLO9J1WVlFjNiAQxBiddtwk",
+    "formFields": [
+      {
+        "label": "Email:",
+        "type": "email",
+        "id": "email",
+        "model": "email",
+        "required": true
+      },
+      {
+        "label": "Nome:",
+        "type": "text",
+        "id": "name",
+        "model": "name",
+        "required": true
+      },
+      {
+        "label": "Número de Celular:",
+        "type": "tel",
+        "id": "phone",
+        "model": "phone",
+        "required": true
+      },
+      {
+        "label": "Gênero:",
+        "type": "select",
+        "id": "gender",
+        "model": "gender",
+        "options": [
+          { "label": "Selecione", "value": "" },
+          { "label": "Masculino", "value": "masculino" },
+          { "label": "Feminino", "value": "feminino" }
+        ],
+        "required": true
+      },
+      {
+        "label": "Concordo com a coleta de dados:",
+        "type": "checkbox",
+        "id": "consent",
+        "model": "consent",
+        "required": true
+      }
+    ]
+  }
+]  

@@ -1,18 +1,16 @@
 <template>
   <div>
     <button @click="showPopup(1)">Abrir Pop-up 1</button>
-    <button @click="showPopup(2); getVideoInfo()">Abrir Pop-up 2</button>
-
+    <button @click="showPopup(2)">Abrir Pop-up 2</button>
 
     <div v-if="currentPopup" class="popup-overlay">
       <div class="popup">
         <button class="close-button" @click="closePopup">&times;</button>
         <h1>{{ currentPopup.title }}</h1>
         <h2>{{ currentPopup.subtitle }}</h2>
-        <img v-if="currentPopup.image" :src="currentPopup.image" :alt="currentPopup.title" class="popup-image" />
+        <img v-if="currentPopup.image" :src="currentPopup.image" :alt="currentPopup.title" class="popup-image"/>
 
-
-        <video v-if="currentPopup.video" :src="currentPopup.video" controls></video>
+        <video v-if="currentPopup.videoUrl" :src="currentPopup.videoUrl" controls></video>
 
         <form @submit.prevent="submitForm">
           <div v-for="field in currentPopup.formFields" :key="field.id" class="form-field">
@@ -43,19 +41,28 @@
       </div>
     </div>
   </div>
+  <div v-if="showSuccessModal" class="success-modal-overlay">
+  <div class="success-modal">
+    <h1>Cadastro feito com sucesso!</h1>
+    <button class="close-button2" @click="closeSuccessModal">&times;</button>
+    </div>
+  </div>
+
+
+
 </template>
 
 
-<script>
-import axios from 'axios';
 
+<script>
 import popupConfig from '../popupConfig.json';
 
 export default {
   data() {
     return {
       currentPopup: null,
-      form: {}
+      form: {},
+      showSuccessModal: false
     };
   },
   methods: {
@@ -83,25 +90,26 @@ export default {
       }
       return '';
     },
-    getVideoInfo() {
-      const videoId = 'x8m1o7u'; // ID do vídeo desejado
-      const apiKey = 'eb6b1ef1d090cd588547'; // Sua chave de API
-
-      const apiUrl = `https://api.dailymotion.com/video/${videoId}?fields=embed_url&api_key=${apiKey}`;
-
-axios.get(apiUrl)
-  .then(response => {
-    const embedUrl = response.data.embed_url;
-    this.showPopup(2);
-    this.currentPopup.video = embedUrl;
-  })
-  .catch(error => {
-    console.error('Erro ao obter informações do vídeo:', error);
-  });
-}
-
+    submitForm() {
+      console.log('Dados do Pop-up:', this.form);
+      this.resetForm();
+      this.currentPopup = null;
+      this.showSuccessModal = true; 
+    },
+    closeSuccessModal() {
+    this.showSuccessModal = false;
   },
-
+  },
+  computed: {
+    popupConfig() {
+      return popupConfig.map(popup => {
+        if (popup.image === 'niquel.jpg') {
+          popup.image = niquelImage;
+        }
+        return popup;
+      });
+    }
+  }
 };
 </script>
 
@@ -189,6 +197,37 @@ select {
   border-color: white;
 }
 
+.success-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.success-modal {
+  position: relative; 
+  background: black;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close-button2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white; 
+  cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
   .popup {
@@ -200,5 +239,24 @@ select {
   button{
     margin-top: 15px;
   }
+  .success-modal {
+    position: relative; 
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.close-button2 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white; 
+  cursor: pointer;
+}
 }
 </style>
