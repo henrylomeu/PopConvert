@@ -1,7 +1,23 @@
-# Vue 3 + Vite
+<h1> :page_facing_up: Projeto</h1>
+<h3>Pop up</h3> 
+Essa é uma aplicação que simula dois pop ups de um site</br></br>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+O site é construído em cima do Vue, uma das bibliotecas JavaScript mais populares para desenvolvimento de interfaces de usuário.</br></br>
 
-## Recommended IDE Setup
+Para estilização do site, é utilizado o CSS.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+<h1> :computer: Tecnologias</h1>
+- Vue </br>
+- CSS </br>
+
+<h1> :rocket: Como executar</h1>
+- Clone o repositório </br>
+- Instale as dependências com npm install ou yarn install </br>
+- Inicie o servidor com npm run dev ou yarn run dev </br>
+
+Agora você pode acessar do seu navegador com o link disponibilizado
+
+Link do deploy: https://pop-convert-nine.vercel.app/</br>
+
+Divirta-se!
+
